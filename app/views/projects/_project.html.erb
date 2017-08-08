@@ -1,1 +1,15 @@
-<p><%= project.title %></p>
+<div class="project-item" data-project-id="@project.id">
+  <div class="project-title row">
+    <span class="show-project-button col-md-2">
+      <%= fa_icon "window-minimize" %>
+      <%= fa_icon "window-restore" %>
+    </span>
+    <span class="col-md-8">
+      <%= project.title %>
+    </span>
+    <span class="manage-project-buttons col-md-2">
+      <%= fa_icon "pencil" %>
+      <%= fa_icon "trash" %>
+    </span>
+  </div>
+</div>
