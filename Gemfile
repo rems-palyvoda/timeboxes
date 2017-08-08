@@ -37,7 +37,7 @@ gem 'jbuilder', '~> 2.5'
 
 gem 'bootstrap', '~> 4.0.0.alpha6'
 source 'https://rails-assets.org' do
-    gem 'rails-assets-tether', '>= 1.3.3'
+  gem 'rails-assets-tether', '>= 1.3.3'
 end
 
 group :development, :test do
@@ -46,6 +46,8 @@ group :development, :test do
   # Adds support for Capybara system testing and selenium driver
   gem 'capybara', '~> 2.13'
   gem 'selenium-webdriver'
+  gem 'rspec-rails', '~> 3.5'
+  gem 'shoulda-matchers', git: 'https://github.com/thoughtbot/shoulda-matchers.git', branch: 'rails-5'
 end
 
 group :development do
