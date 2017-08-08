@@ -1,5 +1,5 @@
 import './styles/projects'
+import './create.coffee'
 
-console.log('from index')
 
 

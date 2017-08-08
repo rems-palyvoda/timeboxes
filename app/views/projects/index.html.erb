@@ -1,9 +1,11 @@
 <div class="container text-center">
-  <%= form_for @project, remote: true do |f| %>
-    <%= f.text_field :title, placeholder: "Create new project" %>
-    <%= f.submit %>
-  <% end %>
-  <br>
-
-  <%= render @projects %>
+  <div class="new-project-form">
+    <%= form_for @project, remote: true, id: "new-project-form" do |f| %>
+      <%= f.text_field :title, placeholder: "Create new project" %>
+      <%= f.submit "New Project" %>
+    <% end %>
+  </div>
+  <div class="projects-list">
+    <%= render @projects %>
+  </div>
 </div>
