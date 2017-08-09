@@ -17,6 +17,7 @@ class ProjectsController < ApplicationController
 
   def update
     if @project.update(project_params)
+      render json: @project
       flash[:success] = "Project is created."
     else
       flash[:danger] = "Project isn't created."
