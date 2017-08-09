@@ -2,7 +2,7 @@ $(document).on "turbolinks:load", ->
   $('.fa-pencil').on 'click', ->
     $(this).parentsUntil('.project-item').find('.project-title').toggle()
 
-  $('input[type="submit"]').on 'click', (e) ->
+  $('.project-title input[type="submit"]').on 'click', (e) ->
     e.preventDefault()
     projectId = $(this).closest('.project-item').data('project-id')
     title = $(this).prev()
