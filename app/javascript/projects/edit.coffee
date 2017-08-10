@@ -1,4 +1,4 @@
-$(document).on "turbolinks:load", ->
+export editProject = () ->
   $('.fa-pencil').on 'click', ->
     $(this).parentsUntil('.project-item').find('.project-title').toggle()
 
