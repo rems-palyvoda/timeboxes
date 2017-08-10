@@ -10,22 +10,26 @@ class ProjectsController < ApplicationController
     @project = Project.new(project_params)
     if @project.save
       flash[:success] = "Project is created."
+      render json: @project, status: 201 
     else
+      render json: {errors: @project.errors.full_messages}, status: 422
       flash[:danger] = "Project isn't created."
     end
   end
 
   def update
     if @project.update(project_params)
-      render json: @project
+      render json: @project, status: 201
       flash[:success] = "Project is created."
     else
+      render json: {errors: @project.errors.full_messages}, status: 422
       flash[:danger] = "Project isn't created."
     end
   end
 
   def destroy
     @project.destroy
+    head 204
     flash[:success] = "Project is deleted."
   end
 

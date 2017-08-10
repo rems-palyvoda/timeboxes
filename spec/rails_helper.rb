@@ -62,3 +62,5 @@ Shoulda::Matchers.configure do |config|
     with.library :rails
   end
 end
+
+Capybara.default_max_wait_time = 5
