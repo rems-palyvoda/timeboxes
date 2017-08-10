@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'index page', type: :feature do
+RSpec.describe 'index page', type: :feature, js: true do
   before do
     Project.create title: "Testing Project"
     visit '/'
@@ -13,8 +13,7 @@ RSpec.describe 'index page', type: :feature do
   
   it 'form creates new project' do
     fill_in('project[title]', with: 'test project')
-    click_on('New Project')
-    visit '/'
+    click_on('New Project', wait: 5)
     expect(page).to have_content('test project')
     expect(page).to have_css('.projects-list')
     expect(page).to have_css('.project-item', count: 2)

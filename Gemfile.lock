@@ -49,6 +49,8 @@ GEM
       tzinfo (~> 1.1)
     addressable (2.5.1)
       public_suffix (~> 2.0, >= 2.0.2)
+    archive-zip (0.7.0)
+      io-like (~> 0.3.0)
     arel (8.0.0)
     autoprefixer-rails (7.1.2.3)
       execjs
@@ -81,9 +83,12 @@ GEM
     ffi (1.9.18)
     font-awesome-rails (4.7.0.2)
       railties (>= 3.2, < 5.2)
+    geckodriver-helper (0.0.3)
+      archive-zip (~> 0.7.0)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     i18n (0.8.6)
+    io-like (0.3.0)
     jbuilder (2.7.0)
       activesupport (>= 4.2.0)
       multi_json (>= 1.2)
@@ -226,6 +231,7 @@ DEPENDENCIES
   capybara (~> 2.13)
   coffee-rails (~> 4.2)
   font-awesome-rails
+  geckodriver-helper
   jbuilder (~> 2.5)
   jquery-rails
   listen (>= 3.0.5, < 3.2)
