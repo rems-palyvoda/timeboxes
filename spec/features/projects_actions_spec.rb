@@ -3,6 +3,8 @@ require 'rails_helper'
 RSpec.describe 'Project Actions', type: :feature, js: true do
   before do
     Project.create title: "Testing Project"
+    user = create(:user)
+    login_as(user, :scope => :user)
     visit '/'
   end
 
@@ -16,6 +18,7 @@ RSpec.describe 'Project Actions', type: :feature, js: true do
   end
 
   it "can delete project" do
+    expect(page).to have_selector('.alert', visible: false)
     find('.fa-trash').click
     expect(page).to_not have_content('Testing Project')
     expect(page).to_not have_css('.project-item')

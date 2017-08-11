@@ -8,9 +8,13 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
     <%= javascript_pack_tag 'projects' %>
     <%= stylesheet_pack_tag 'projects' %>
+    <%# <script src="http://192.168.11.66:58080/packs/projects.js"></script> %>
+    <%# <link rel="stylesheet" media="screen" href="http://192.168.11.66:58080/packs/projects.css" /> %>
   </head>
 
   <body>
+    <%= render "layouts/shared/navbar" %>
     <%= yield %>
+    <%= render "layouts/shared/notifications" %>
   </body>
 </html>

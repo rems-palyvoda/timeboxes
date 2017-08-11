@@ -2,35 +2,30 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:update, :destroy]
 
   def index
-    @project = Project.new
     @projects = Project.all
+    @project = Project.new
   end
 
   def create
     @project = Project.new(project_params)
     if @project.save
-      flash[:success] = "Project is created."
-      # render json: @project, status: 201 
+      # render json: @project, status: 201
     else
       # render json: {errors: @project.errors.full_messages}, status: 422
-      flash[:danger] = "Project isn't created."
     end
   end
 
   def update
     if @project.update(project_params)
       render json: @project, status: 200
-      flash[:success] = "Project is created."
     else
       render json: {errors: @project.errors.full_messages}, status: 422
-      flash[:danger] = "Project isn't created."
     end
   end
 
   def destroy
     @project.destroy
-    head 204
-    flash[:success] = "Project is deleted."
+    render json: {status: 204}
   end
 
   private

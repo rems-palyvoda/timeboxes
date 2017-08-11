@@ -1,2 +1,6 @@
+$('.alert').fadeIn();
+$('.alert div').text('Project created');
 $('.projects-list').append('<%= j render(@project) %>');
-$("#project_title").val('');
+$(".new-project-form input[type='text']").val('');
+
+console.log($('.alert').html());

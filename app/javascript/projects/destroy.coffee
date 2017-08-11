@@ -8,6 +8,8 @@ export destroyProject = () ->
       dataType: 'json'
       success: (data) ->
         $('.project-item[data-project-id='+projectId+']').remove()
+        $('.alert').show()
+        $('.alert div').show().text('Project deleted')
       error: (err) ->
         console.log err
 

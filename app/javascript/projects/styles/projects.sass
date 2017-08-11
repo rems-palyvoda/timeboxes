@@ -1,5 +1,18 @@
+@import url('https://fonts.googleapis.com/css?family=Arvo:400,700')
+
+$background-color-light: #EAEDF2
+$background-color-dark: #999999
+$light-blue: #19B5FE
+$dark-blue: #2574A9
+$text-color: #34495E
+
 body 
-  background: #ededed
+  background: $background-color-light
+  font-family: 'Arvo', serif
+  font-weight: 700
+  color: $text-color
+
+/* projects views */
 
 .new-project-form
   margin: 30px 0
@@ -9,3 +22,40 @@ body
   width: 500px
   border: solid 1px #b7b7b7
   border-radius: 5px
+
+/* devise forms */
+
+.devise-form
+  width: 300px
+  margin: 0 auto
+
+/* Notidications */
+
+.alert
+  margin: 0
+  position: absolute
+  bottom: 0
+  width: 100%
+  font-weight: 400
+
+.alert-alert
+  background-color: #f2dede
+  border-color: #eed3d7
+  color: #b94a48
+
+.alert-notice
+  background-color: #dff0d8
+  border-color: #d6e9c6
+  color: #468847
+
+/* navbar */
+nav
+  background: $dark-blue
+
+  .navbar-brand
+    color: #000
+
+  .nav-link
+    font-weight: 400
+    color: white
+  
