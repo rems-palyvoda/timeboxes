@@ -2,12 +2,12 @@ class ProjectsController < ApplicationController
   before_action :set_project, only: [:update, :destroy]
 
   def index
-    @projects = Project.all
-    @project = Project.new
+    @projects = Project.where(user: current_user)
+    @project = current_user.projects.build
   end
 
   def create
-    @project = Project.new(project_params)
+    @project = current_user.projects.build(project_params)
     if @project.save
       # render json: @project, status: 201
     else
@@ -16,7 +16,7 @@ class ProjectsController < ApplicationController
   end
 
   def update
-    if @project.update(project_params)
+    if @project.update_attributes(project_params)
       render json: @project, status: 200
     else
       render json: {errors: @project.errors.full_messages}, status: 422

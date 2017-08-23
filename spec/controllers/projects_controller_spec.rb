@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe ProjectsController, type: :controller do
   before do
-    @project = Project.create(title: "Project")
     @user = create(:user)
+    @project = Project.create(title: "Project", user: @user)
     sign_in @user
   end
 
@@ -22,6 +22,14 @@ RSpec.describe ProjectsController, type: :controller do
     it "loads all of the posts into @posts" do
       get :index
       expect(assigns(:projects)).to match_array([@project])
+    end
+
+    it "shows projects belongs current user only" do
+      user = create :user, email: "user2@example.com"
+      @smb_project = Project.create title: "title", user_id: user
+      get :index
+      expect(assigns(:projects)).to match_array([@project])
+      expect(assigns(:projects)).not_to match_array([@smb_project])
     end
   end
 

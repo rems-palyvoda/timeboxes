@@ -2,8 +2,8 @@ require 'rails_helper'
 
 RSpec.describe 'index page', type: :feature, js: true do
   before do
-    Project.create title: "Testing Project"
-    user = create(:user)
+    project = create(:project)
+    user = project.user
     login_as(user, :scope => :user)
     visit '/'
   end
